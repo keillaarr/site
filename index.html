@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Keilla Arruda - Desenvolvimento Web </title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body class="bg-[#0F172A] text-[#F1F5F9] font-sans">
+
+<!-- Cabeçalho -->
+<header class="bg-[#0F172A] text-white py-6 shadow">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#">
+        <img src="assets/logo-branco.png"
+             alt="Logo Keilla Arruda"
+             class="h-16 w-16 md:h-20 md:w-20 rounded-full transition-transform duration-300 hover:scale-110 shadow-lg" />
+      </a>
+      <nav class="space-x-4 text-[#94A3B8]">
+        <a href="#sobre" class="hover:text-white transition">Sobre</a>
+        <a href="#servicos" class="hover:text-white transition">Serviços</a>
+        <a href="#contato" class="hover:text-white transition">Contato</a>
+      </nav>
+    </div>
+  </header>
+  
+  
+
+  <!-- Seção Hero -->
+  <section class="relative bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] py-24 text-center text-white overflow-hidden">
+    <div id="particles-js" class="absolute inset-0 -z-10 w-full h-full"></div>
+    <div class="container mx-auto px-6 max-w-3xl relative">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+        Seu site é sua vitrine. <br />
+        Que tal fazer dele sua melhor versão?
+      </h1>
+      <p id="frase-dinamica" class="text-lg mb-10 h-6 md:h-auto drop-shadow-md"></p>
+      <a href="#contato" class="inline-block bg-[#0F172A] hover:bg-[#1E293B] transition px-10 py-4 rounded-full font-semibold drop-shadow-md text-white">
+        Vamos criar seu site!
+      </a>
+    </div>
+  </section>
+
+  <!-- Quem Sou Eu -->
+  <section id="sobre" class="bg-[#1E293B] py-20">
+    <div class="container mx-auto px-8 text-center max-w-4xl">
+      <h3 class="text-3xl font-semibold mb-8">Quem Sou Eu?</h3>
+      <p class="text-[#94A3B8] mb-8 text-lg">
+        Deixe-me mostrar um pouco do meu código e da minha essência.
+      </p>
+      <div class="bg-black text-green-400 font-mono text-left rounded-xl p-6 text-sm md:text-base overflow-auto shadow-md h-[400px]">
+        <pre id="codigo-digitado"></pre>
+      </div>
+      <p class="text-[#E2E8F0] mt-8 text-lg">
+        Ah, e sim: eu realmente tomo muito chá enquanto crio projetos incríveis! 🍵✨
+      </p>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="bg-[#1E293B] py-20">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-semibold text-center mb-12">Serviços Oferecidos</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+
+        <!-- Site Institucional -->
+        <div class="bg-[#0F172A] p-6 rounded-xl shadow hover:shadow-lg transition text-white">
+            <div class="flex justify-center mb-4">
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_tno6cg2w.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+          </div>
+          <h4 class="text-xl font-bold mb-2">Site Institucional</h4>
+          <p class="text-[#94A3B8]">Sua empresa no digital, com presença profissional e moderna.</p>
+          <a href="insttitucional.html" target="_blank" class="text-[#60A5FA] hover:underline text-sm mt-3 inline-block">Ver exemplo</a>
+        </div>
+
+        
+        <!-- Landing Page -->
+        <div class="bg-[#0F172A] p-6 rounded-xl shadow hover:shadow-lg transition text-white">
+            <div class="flex justify-center mb-4">
+              <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_myejiggj.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Landing Pages</h4>
+            <p class="text-[#94A3B8]">Páginas estratégicas para conversão com visual impactante.</p>
+            <a href="https://github.com/keillaarr/cardapio" target="_blank" class="text-[#60A5FA] hover:underline text-sm mt-3 inline-block">Ver exemplo</a>
+          </div>
+  
+          <!-- Manutenção e Suporte -->
+          <div class="bg-[#0F172A] p-6 rounded-xl shadow hover:shadow-lg transition text-white">
+            <div class="flex justify-center mb-4">
+              <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_9cyyl8i4.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Manutenção & Suporte</h4>
+            <p class="text-[#94A3B8]">Correções, atualizações e melhorias constantes no seu site.</p>
+            <span class="text-gray-400 text-sm block mt-3">Exemplo sob demanda</span>
+          </div>
+  
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-16 bg-[#0F172A]">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-semibold mb-4 text-white">Fale Comigo</h3>
+      <p class="mb-6 text-[#94A3B8]">Entre em contato pelo WhatsApp ou envie uma mensagem pelo formulário abaixo.</p>
+      <a href="https://zapbio.link/ozvo8c" class="bg-emerald-500 text-white px-6 py-3 rounded-full hover:bg-emerald-600 transition">Falar no WhatsApp</a>
+
+      <div id="mensagem-sucesso" class="hidden bg-emerald-100 border border-emerald-400 text-emerald-700 px-4 py-3 rounded mt-6 max-w-xl mx-auto" role="alert">
+        <strong class="font-bold">Mensagem enviada com sucesso!</strong>
+        <span class="block sm:inline">Em breve entrarei em contato com você.</span>
+      </div>
+
+      <form id="form-contato" class="mt-12 max-w-2xl mx-auto space-y-4">
+        <input type="text" name="nome" placeholder="Seu nome" required class="w-full p-3 border rounded bg-[#1E293B] text-white" />
+        <input type="email" name="email" placeholder="Seu e-mail" required class="w-full p-3 border rounded bg-[#1E293B] text-white" />
+        <textarea name="mensagem" placeholder="Sua mensagem" required class="w-full p-3 border rounded h-32 bg-[#1E293B] text-white"></textarea>
+        <button type="submit" class="bg-[#3B82F6] text-white px-6 py-3 rounded hover:bg-[#2563EB] transition">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-[#0F172A] text-white text-center py-6 mt-16">
+    <p>© 2025 Keilla Arruda. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

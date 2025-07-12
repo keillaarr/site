@@ -1,0 +1,30 @@
+#cursor {
+    display: inline-block;
+    width: 5px;
+    height: 1em;
+    background-color: #4ade80;
+    animation: blink 1s steps(1) infinite;
+    margin-left: 4px;
+    vertical-align: bottom;
+  }
+  
+  @keyframes blink {
+    50% {
+      background-color: transparent;
+    }
+  }
+  lottie-player {
+    transition: transform 0.3s ease;
+  }
+  lottie-player:hover {
+    transform: scale(1.1);
+  }
+  #servicos .bg-white {
+    /* já tem padding e sombra pelo Tailwind, mas você pode personalizar */
+    cursor: pointer;
+  }
+  #servicos .bg-white:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+  }

@@ -1,0 +1,17 @@
+{
+  "name": "port-keilla",
+  "version": "1.0.0",
+  "description": "Portfólio da Keilla com Tailwind CSS",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.3"
+  }
+}
+
+
+
