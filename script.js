@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-  // Função para aguardar emailjs estar disponível até 3 segundos
   function aguardarEmailjs(timeout = 3000, interval = 50) {
     return new Promise((resolve, reject) => {
       const start = Date.now();
@@ -16,6 +15,9 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   aguardarEmailjs().then((emailjs) => {
+    // Inicializa EmailJS com a Public Key
+    emailjs.init("FgJQsG9UMJEsw68-5");
+
     // ----- Efeito digitação estilo console -----
     const codigo = [
       "// Arquivo: keilla.js",
