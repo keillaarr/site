@@ -1,209 +1,39 @@
-#cursor {
-    display: inline-block;
-    width: 5px;
-    height: 1em;
-    background-color: #4ade80;
-    animation: blink 1s steps(1) infinite;
-    margin-left: 4px;
-    vertical-align: bottom;
-  }
-  
-  @keyframes blink {
-    50% {
-      background-color: transparent;
-    }
-  }
-  lottie-player {
-    transition: transform 0.3s ease;
-  }
-  lottie-player:hover {
-    transform: scale(1.1);
-  }
-  #servicos .bg-white {
-    /* já tem padding e sombra pelo Tailwind, mas você pode personalizar */
-    cursor: pointer;
-  }
-  #servicos .bg-white:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-    transform: translateY(-5px);
-    transition: all 0.3s ease;
-  }
-  /* arquivo: css/institucional.css */
+/* Cursor do console */
+#cursor { display: inline-block; width: 5px; height: 1em; background-color: #4ade80; animation: blink 1s steps(1) infinite; margin-left: 4px; vertical-align: bottom; }
+@keyframes blink { 50% { background-color: transparent; } }
 
-body {
-  background-color: #0F172A;
-  color: #F1F5F9;
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-}
+/* Lottie hover */
+lottie-player { transition: transform 0.3s ease; }
+lottie-player:hover { transform: scale(1.1); }
 
-a {
-  color: #60A5FA;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+/* Layout e seções */
+body { background-color: #0F172A; color: #F1F5F9; font-family: 'Inter', sans-serif; margin:0; padding:0; }
+header { background-color: #0F172A; box-shadow:0 2px 8px rgba(0,0,0,0.3); position:sticky; top:0; z-index:50; }
+header .container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; padding:1rem; }
+header img { height:80px; width:80px; border-radius:50%; transition: transform 0.3s; }
+header img:hover { transform: scale(1.1); }
+nav a { color:#94A3B8; margin-left:1.5rem; font-weight:600; }
+nav a:hover { color:#fff; }
 
-a:hover {
-  color: #2563EB;
-  text-decoration: underline;
-}
+.hero { position:relative; text-align:center; padding:6rem 1rem; background:linear-gradient(to bottom right,#3B82F6,#8B5CF6); overflow:hidden; }
+.hero h1 { font-size:2.5rem; font-weight:800; margin-bottom:1rem; line-height:1.2; }
+.hero p { font-size:1.125rem; margin-bottom:2rem; }
 
-header {
-  background-color: #0F172A;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
+.codigo-box { background:#000; color:#4ade80; font-family:monospace; border-radius:1rem; padding:1rem; overflow:auto; height:400px; }
 
-header .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+#servicos .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+.project-card { background:#1E293B; border-radius:1rem; padding:1.5rem; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:0.3s; text-align:center; cursor:pointer; }
+.project-card:hover { transform:translateY(-5px); box-shadow:0 8px 24px rgba(0,0,0,0.6); }
+.project-card h3 { color:#60A5FA; margin-bottom:0.75rem; font-size:1.25rem; }
+.project-card p { color:#CBD5E1; font-size:1rem; line-height:1.5; }
+.project-card a { color:#60A5FA; font-weight:600; margin-top:1rem; display:inline-block; }
+.project-card a:hover { text-decoration:underline; }
 
-header img {
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}
+#contato { background:#1E293B; padding:4rem 1.5rem; text-align:center; }
+#contato a.button { background:#22C55E; color:#fff; padding:0.75rem 2rem; border-radius:9999px; font-weight:600; display:inline-block; transition:0.3s; }
+#contato a.button:hover { background:#16A34A; }
+#mensagem-sucesso { background:#d1fae5; color:#065f46; padding:1rem; border-radius:0.5rem; margin-top:1rem; display:none; }
 
-header img:hover {
-  transform: scale(1.1);
-}
+footer { background:#0F172A; color:#fff; text-align:center; padding:1.5rem; font-size:0.875rem; }
 
-nav a {
-  font-weight: 600;
-  color: #94A3B8;
-  margin-left: 2rem;
-  font-size: 1rem;
-}
-
-nav a:hover {
-  color: #FFFFFF;
-}
-
-main.container {
-  max-width: 1200px;
-  margin: 3rem auto 6rem;
-  padding: 0 1.5rem;
-}
-
-main h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #FFFFFF;
-}
-
-main p.intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  color: #94A3B8;
-  font-size: 1.125rem;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background-color: #1E293B;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-}
-
-.project-card h3 {
-  color: #60A5FA;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  font-size: 1.25rem;
-}
-
-.project-card p {
-  color: #CBD5E1;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.project-card ul {
-  color: #94A3B8;
-  font-size: 0.875rem;
-  list-style-type: disc;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.project-card span.locked {
-  color: #94A3B8;
-  font-size: 0.875rem;
-  font-style: italic;
-  display: inline-block;
-  margin-top: 1rem;
-}
-
-.project-card a {
-  display: inline-block;
-  margin-top: 1rem;
-  font-weight: 600;
-}
-
-section#contato {
-  background-color: #1E293B;
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
-
-section#contato h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 1rem;
-}
-
-section#contato p {
-  color: #94A3B8;
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-}
-
-section#contato a.button {
-  background-color: #22C55E; /* verde esmeralda */
-  color: #FFFFFF;
-  padding: 0.75rem 2rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-  font-size: 1.125rem;
-  display: inline-block;
-}
-
-section#contato a.button:hover {
-  background-color: #16A34A;
-}
-
-footer {
-  background-color: #0F172A;
-  color: #FFFFFF;
-  padding: 1.5rem;
-  text-align: center;
-  font-size: 0.875rem;
-}
+#scroll-progress { position:fixed; top:0; left:0; height:4px; background-color:#3B82F6; width:0%; z-index:9999; }
