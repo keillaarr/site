@@ -1,39 +1,56 @@
-/* Cursor do console */
-#cursor { display: inline-block; width: 5px; height: 1em; background-color: #4ade80; animation: blink 1s steps(1) infinite; margin-left: 4px; vertical-align: bottom; }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+:root { --accent-1: #60A5FA; --accent-2: #8B5CF6; }
+
+html,body { height:100%; font-family: 'Inter', sans-serif; }
+
+/* HERO animated gradient (subtle & performant) */
+.hero-gradient {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Particles container should fill hero */
+#particles-js { opacity: 0.08; }
+
+/* Terminal / código box */
+.codigo-box {
+  background: #000;
+  color: #4ade80;
+  border-radius: 12px;
+  padding: 18px;
+  min-height: 220px;
+  max-height: 420px;
+  overflow:auto;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+
+/* Cursor */
+#cursor { display:inline-block; width:8px; height:1em; background:#4ade80; margin-left:6px; vertical-align:bottom; animation: blink 1s steps(2) infinite; }
 @keyframes blink { 50% { background-color: transparent; } }
 
-/* Lottie hover */
-lottie-player { transition: transform 0.3s ease; }
-lottie-player:hover { transform: scale(1.1); }
+/* Service cards & hover */
+.service-card { border-radius: 12px; transition: transform 300ms ease, box-shadow 300ms ease; }
+.service-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 18px 40px rgba(99,102,241,0.12), 0 6px 18px rgba(0,0,0,0.6); }
 
-/* Layout e seções */
-body { background-color: #0F172A; color: #F1F5F9; font-family: 'Inter', sans-serif; margin:0; padding:0; }
-header { background-color: #0F172A; box-shadow:0 2px 8px rgba(0,0,0,0.3); position:sticky; top:0; z-index:50; }
-header .container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; padding:1rem; }
-header img { height:80px; width:80px; border-radius:50%; transition: transform 0.3s; }
-header img:hover { transform: scale(1.1); }
-nav a { color:#94A3B8; margin-left:1.5rem; font-weight:600; }
-nav a:hover { color:#fff; }
+/* Tech badges */
+.tech-badge { width:96px; height:96px; display:flex; align-items:center; justify-content:center; flex-direction:column; transition: transform .25s, box-shadow .25s; }
+.tech-badge:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(139,92,246,0.12); }
 
-.hero { position:relative; text-align:center; padding:6rem 1rem; background:linear-gradient(to bottom right,#3B82F6,#8B5CF6); overflow:hidden; }
-.hero h1 { font-size:2.5rem; font-weight:800; margin-bottom:1rem; line-height:1.2; }
-.hero p { font-size:1.125rem; margin-bottom:2rem; }
+/* Scroll progress */
+#scroll-progress { transition: width 120ms linear; }
 
-.codigo-box { background:#000; color:#4ade80; font-family:monospace; border-radius:1rem; padding:1rem; overflow:auto; height:400px; }
-
-#servicos .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
-.project-card { background:#1E293B; border-radius:1rem; padding:1.5rem; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:0.3s; text-align:center; cursor:pointer; }
-.project-card:hover { transform:translateY(-5px); box-shadow:0 8px 24px rgba(0,0,0,0.6); }
-.project-card h3 { color:#60A5FA; margin-bottom:0.75rem; font-size:1.25rem; }
-.project-card p { color:#CBD5E1; font-size:1rem; line-height:1.5; }
-.project-card a { color:#60A5FA; font-weight:600; margin-top:1rem; display:inline-block; }
-.project-card a:hover { text-decoration:underline; }
-
-#contato { background:#1E293B; padding:4rem 1.5rem; text-align:center; }
-#contato a.button { background:#22C55E; color:#fff; padding:0.75rem 2rem; border-radius:9999px; font-weight:600; display:inline-block; transition:0.3s; }
-#contato a.button:hover { background:#16A34A; }
-#mensagem-sucesso { background:#d1fae5; color:#065f46; padding:1rem; border-radius:0.5rem; margin-top:1rem; display:none; }
-
-footer { background:#0F172A; color:#fff; text-align:center; padding:1.5rem; font-size:0.875rem; }
-
-#scroll-progress { position:fixed; top:0; left:0; height:4px; background-color:#3B82F6; width:0%; z-index:9999; }
+/* Responsive fine tuning */
+@media (min-width: 768px){
+  .codigo-box { padding: 28px; }
+}

@@ -1,89 +1,143 @@
+// script.js (defer)
 window.addEventListener("DOMContentLoaded", () => {
 
-  // ---------- EmailJS Init ----------
-  emailjs.init("FgJQsG9UMJEsw68-5");
+  // ---------- Particles ----------
+  if (window.particlesJS) {
+    particlesJS("particles-js", {
+      particles:{ number:{value:40,density:{enable:true,value_area:800}}, color:{value:"#ffffff"}, shape:{type:"circle"}, opacity:{value:0.7}, size:{value:3,random:true}, line_linked:{enable:true,distance:140,color:"#ffffff",opacity:0.08,width:1}, move:{enable:true,speed:2,direction:"none",straight:false,out_mode:"out",bounce:false} },
+      interactivity:{ detect_on:"canvas", events:{ onhover:{enable:true,mode:"grab"}, onclick:{enable:true,mode:"push"}, resize:true}, modes:{ grab:{distance:140,line_linked:{opacity:0.25}}, push:{particles_nb:4} } },
+      retina_detect:true
+    });
+  }
 
-  // ---------- Digitação estilo console ----------
-  const codigo = [
+  // ---------- Frases dinâmicas (typewriter loop com cursor) ----------
+  const frases = [
+  "Transformo ideias em experiências digitais: sites que encantam e sistemas que automatizam.",
+  "Mais do que código, entrego propósito, performance e resultado.",
+  "Códigos, ideias e uma xícara de chá é assim que soluções ganham vida."
+  ];
+  const fraseElemento = document.getElementById("frase-dinamica");
+  let fIndex = 0, lIndex = 0, escrevendo = true;
+  function animarFrase(){
+    const atual = frases[fIndex];
+    if(escrevendo){
+      if(lIndex < atual.length){
+        fraseElemento.textContent += atual.charAt(lIndex++);
+        setTimeout(animarFrase, 35);
+      } else {
+        escrevendo = false;
+        setTimeout(animarFrase, 1800);
+      }
+    } else {
+      if(lIndex > 0){
+        fraseElemento.textContent = atual.substring(0, --lIndex);
+        setTimeout(animarFrase, 20);
+      } else {
+        escrevendo = true;
+        fIndex = (fIndex + 1) % frases.length;
+        setTimeout(animarFrase, 400);
+      }
+    }
+  }
+  animarFrase();
+
+  // ---------- Código digitando no "terminal" (linha por linha) ----------
+  const codigoLinhas = [
     "// Arquivo: keilla.js",
     "const keilla = {",
     '  nome: "Keilla Arruda",',
-    '  profissão: "Desenvolvedora Web",',
+    '  profissao: "Desenvolvedora Web",',
     "  cha: true,",
     '  paixao: "Transformar projetos em experiências digitais com propósito.",',
     "};",
-    'console.log("Olá! Sou a Keilla e estou pronta pra codar seu sucesso.");'
+    'console.log("Olá! Sou a Keilla e estou pronta pra codar seu sucesso!");'
   ];
-
   const pre = document.getElementById("codigo-digitado");
+  function digitarCodigo(linha=0){
+    if(linha >= codigoLinhas.length) return;
+    const texto = codigoLinhas[linha];
+    let i = 0;
+    const linhaEl = document.createElement("div");
+    linhaEl.className = "mb-0";
+    pre.appendChild(linhaEl);
+
+    function digitaChar(){
+      if(i < texto.length){
+        linhaEl.textContent += texto.charAt(i++);
+        pre.scrollTop = pre.scrollHeight;
+        setTimeout(digitaChar, 18 + Math.random()*10);
+      } else {
+        // pequena pausa entre linhas
+        setTimeout(()=> digitarCodigo(linha+1), 200);
+      }
+    }
+    digitaChar();
+  }
+  digitarCodigo();
+
+  // add cursor on the right-hand side last line
   const cursor = document.createElement("span");
   cursor.id = "cursor";
-  cursor.textContent = "|";
-  pre.appendChild(cursor);
+  cursor.textContent = " ";
+  // append cursor to pre after a brief delay (when at least one node exists)
+  setTimeout(()=> { pre.appendChild(cursor); }, 400);
 
-  let linha = 0;
-  function digitarLinha() {
-    if(linha >= codigo.length) return;
-    const texto = codigo[linha];
-    let i=0;
-    const linhaHTML = document.createElement("div");
-    function digitarChar(){
-      if(i<texto.length){
-        linhaHTML.innerHTML += texto.charAt(i);
-        if(!pre.contains(linhaHTML)) pre.insertBefore(linhaHTML, cursor);
-        i++;
-        setTimeout(digitarChar,20);
-      } else { linha++; setTimeout(digitarLinha,120);}
-    }
-    digitarChar();
+  // ---------- EmailJS (init) ----------
+  if (window.emailjs) {
+    emailjs.init("FgJQsG9UMJEsw68-5"); // mantém a sua chave
   }
-  digitarLinha();
 
-  // ---------- Frases dinâmicas ----------
-  const frases = [
-    "Um bom site começa com uma boa conversa. Bora tirar seu projeto do papel?",
-    "Sites feitos com design, propósito e muitos chás energéticos.",
-    "Código com propósito. Resultado com alma. Seu site exclusivo, feito com paixão."
-  ];
-
-  const fraseElemento = document.getElementById("frase-dinamica");
-  let fraseIndex=0, letraIndex=0, escrevendo=true;
-  fraseElemento.textContent="";
-  function digitarFrase(){
-    const fraseAtual = frases[fraseIndex];
-    if(escrevendo){
-      if(letraIndex<fraseAtual.length){ fraseElemento.textContent += fraseAtual.charAt(letraIndex); letraIndex++; setTimeout(digitarFrase,45); }
-      else { escrevendo=false; setTimeout(digitarFrase,2000);}
-    } else {
-      if(letraIndex>0){ fraseElemento.textContent = fraseAtual.substring(0,letraIndex-1); letraIndex--; setTimeout(digitarFrase,25);}
-      else { escrevendo=true; fraseIndex=(fraseIndex+1)%frases.length; setTimeout(digitarFrase,600);}
-    }
-  }
-  digitarFrase();
-
-  // ---------- Partículas ----------
-  particlesJS("particles-js", {
-    particles:{ number:{value:50,density:{enable:true,value_area:800}}, color:{value:"#ffffff"}, shape:{type:"circle"}, opacity:{value:0.5}, size:{value:3,random:true}, line_linked:{enable:true,distance:150,color:"#ffffff",opacity:0.3,width:1}, move:{enable:true,speed:2,direction:"none",straight:false,out_mode:"out",bounce:false} },
-    interactivity:{ detect_on:"canvas", events:{ onhover:{enable:true,mode:"grab"}, onclick:{enable:true,mode:"push"}, resize:true}, modes:{ grab:{distance:140,line_linked:{opacity:0.5}}, push:{particles_nb:4} } },
-    retina_detect:true
-  });
-
-  // ---------- Formulário ----------
   const form = document.getElementById("form-contato");
   const msgSucesso = document.getElementById("mensagem-sucesso");
-  form.addEventListener("submit", (e)=>{
-    e.preventDefault();
-    const dados = { nome: form.nome.value, email: form.email.value, mensagem: form.mensagem.value };
-    emailjs.send("service_oi08ztj","template_v1ieglv",dados)
-      .then(res=>{ msgSucesso.style.display="block"; setTimeout(()=>msgSucesso.style.display="none",5000); form.reset(); })
-      .catch(err=>alert("Erro ao enviar. Tente novamente."));
-  });
+  if (form) {
+    form.addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const dados = {
+        nome: form.nome.value,
+        email: form.email.value,
+        mensagem: form.mensagem.value
+      };
+      // ajuste service/template conforme o seu EmailJS
+      emailjs.send("service_oi08ztj","template_v1ieglv",dados)
+        .then(()=> {
+          msgSucesso.classList.remove("hidden");
+          msgSucesso.style.opacity = "1";
+          form.reset();
+          setTimeout(()=> {
+            msgSucesso.style.opacity = "0";
+            setTimeout(()=> msgSucesso.classList.add("hidden"), 400);
+          }, 5000);
+        })
+        .catch(()=> {
+          alert("Erro ao enviar. Tente novamente mais tarde.");
+        });
+    });
+  }
 
-  // ---------- Scroll Progress ----------
+  // ---------- Scroll progress ----------
   const progress = document.getElementById("scroll-progress");
-  window.addEventListener("scroll",()=>{
+  function atualizarProgresso(){
     const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-    progress.style.width = scrolled+"%";
+    if(progress) progress.style.width = scrolled + "%";
+  }
+  window.addEventListener("scroll", atualizarProgresso);
+  atualizarProgresso();
+
+  // ---------- Scroll reveal (IntersectionObserver) ----------
+  const revealEls = document.querySelectorAll("section, .service-card, .tech-badge");
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) {
+        entry.target.classList.add("opacity-100","translate-y-0");
+        entry.target.classList.remove("opacity-0","-translate-y-6");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el=>{
+    el.classList.add("opacity-0","-translate-y-6","transition","duration-700","ease-out");
+    obs.observe(el);
   });
 
 });
