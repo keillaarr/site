@@ -1,6 +1,7 @@
 # Portfólio – Keilla Arruda 
 
-<img width="1024" height="1024" alt="meulogo" src="https://github.com/user-attachments/assets/9d076e94-20af-49c5-8ec0-d41cdaaa99d1" />
+<img width="951" height="887" alt="515459558-9d076e94-20af-49c5-8ec0-d41cdaaa99d1" src="https://github.com/user-attachments/assets/fdc48dc9-b974-426f-81ac-d05afbaf5926" />
+
 
 
 Desenvolvedora Fullstack apaixonada por criar soluções práticas, inteligentes e visualmente profissionais.
