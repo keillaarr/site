@@ -1,29 +1,48 @@
-#  Portfólio - Keilla Arruda
+# Portfólio – Keilla Arruda 
 
-Bem-vindo(a) ao meu portfólio! 💜  
-Este é o espaço onde compartilho um pouco da minha trajetória como **Desenvolvedora Fullstack**, meus **projetos**, **habilidades** e a essência que coloco em cada linha de código.
+<img width="1024" height="1024" alt="meulogo" src="https://github.com/user-attachments/assets/9d076e94-20af-49c5-8ec0-d41cdaaa99d1" />
 
----
 
-##  Sobre o Projeto
+Desenvolvedora Fullstack apaixonada por criar soluções práticas, inteligentes e visualmente profissionais.
 
-Este portfólio foi desenvolvido com o objetivo de apresentar meu trabalho de forma **profissional**, **moderna** e **autêntica**, unindo design, performance e propósito.  
-Mais do que um site, ele é uma **experiência digital** que reflete minha paixão por tecnologia e desenvolvimento.
+Este portfólio foi desenvolvido para apresentar minha trajetória, meus projetos e minha atuação como desenvolvedora fullstack, de forma clara, leve e profissional.
 
- **Principais Tecnologias Utilizadas:**
-- **HTML5** e **TailwindCSS** — para um design responsivo, limpo e elegante.  
-- **JavaScript** — responsável pelas animações e interatividade.  
-- **EmailJS** — integração simples para envio de mensagens via formulário.  
-- **LottieFiles** — animações leves e dinâmicas que dão vida à interface.  
-- **Particles.js** — efeitos sutis que adicionam movimento e sofisticação.  
+##  Badges de Tecnologias
 
----
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-##  Objetivo
+ 
+ ## Sobre o Projeto
 
-O foco deste projeto é **mostrar de forma prática** minhas habilidades como desenvolvedora, com ênfase em:
-- Criação de **interfaces intuitivas e responsivas**.  
-- Desenvolvimento **Fullstack**, conectando frontend e backend de maneira eficiente.  
-- Valorização de **experiência do usuário (UX)** e **estética funcional**.  
+Este portfólio foi criado com o objetivo de apresentar minha atuação e meus principais projetos, destacando:
 
----
+- Habilidades em desenvolvimento frontend e backend
+
+- Projetos pessoais e profissionais
+
+- Identidade visual moderna e alinhada ao meu posicionamento na área
+
+- Foco em organização, boas práticas e responsividade
+
+
+
+## Funcionalidades
+
+✅ Navegação fluida entre seções
+✅ Design totalmente responsivo
+✅ Sessão de projetos com cards dinâmicos
+✅ Efeitos e animações suaves
+✅ Seção de habilidades e tecnologias
+✅ Contato direto por redes sociais e e-mail
+✅ Layout minimalista e profissional
+
+
+👩‍🔧 Desenvolvido por
+
+Keilla Arruda
+Desenvolvedora Fullstack
+
+## Licença
+
+Este projeto é de uso pessoal e integra meu portfólio independente.
+A reprodução, redistribuição ou utilização do código para fins comerciais sem autorização é proibida.
