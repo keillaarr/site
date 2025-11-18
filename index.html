@@ -5,66 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Keilla Arruda - Desenvolvimento Web</title>
 
-  <!-- Tailwind via CDN (rápido para protótipo) -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Lottie, Particles e EmailJS -->
+  <!-- Lottie, Particles -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
 
-  <!-- Estilos custom -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Ícone -->
+  <link rel="shortcut icon" href="assets/meulogo.png" type="image/png" />
 </head>
 
 <body class="antialiased bg-[#0F172A] text-[#E6EEF8] font-inter relative">
 
-  <!-- Scroll progress -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-[#60A5FA] w-0 z-50"></div>
+<!-- Scroll progress -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-[#60A5FA] w-0 z-50"></div>
 
-  <!-- Header -->
-  <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-[#0F172A]/80 border-b border-[#0F172A]/50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-4">
-        <img src="assets/meulogo.png" alt="Logo Keilla Arruda" class="h-14 w-14 rounded-full shadow-lg transform transition hover:scale-110" />
-        <span class="hidden md:block text-sm font-semibold text-[#DDE7FB]">Keilla Arruda<span class="text-[#60A5FA] ml-2">• Desenvolvedora</span></span>
+<!-- HEADER -->
+<header
+  id="header"
+  class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#0F172A]/50 border-b border-[#8B5CF6]/30 transition-all duration-500"
+>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <a href="#" class="flex items-center gap-3">
+      <img src="assets/meulogo.png"
+           alt="Logo Keilla Arruda"
+           class="h-12 w-12 md:h-14 md:w-14 rounded-full shadow-lg hover:scale-105 transition-transform" />
+      <span class="text-lg md:text-xl font-semibold text-white">
+        Keilla Arruda <span class="text-[#60A5FA]">• Desenvolvedora</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-8 text-[#E2E8F0] font-medium">
+      <a href="#sobre" class="hover:text-[#8B5CF6] transition">Quem sou eu?</a>
+      <a href="#servicos" class="hover:text-[#60A5FA] transition">Serviços</a>
+      <a href="#tecnologias" class="hover:text-[#8B5CF6] transition">Tecnologias</a>
+      <a href="#contato" class="hover:text-[#60A5FA] transition">Fale comigo</a>
+    </nav>
+
+    <button id="menu-toggle" class="md:hidden flex flex-col justify-center space-y-1.5">
+      <span class="w-6 h-0.5 bg-white rounded"></span>
+      <span class="w-6 h-0.5 bg-white rounded"></span>
+      <span class="w-6 h-0.5 bg-white rounded"></span>
+    </button>
+  </div>
+
+  <nav id="mobile-menu"
+       class="hidden flex-col md:hidden bg-[#0B1220]/95 border-t border-[#8B5CF6]/30 text-center py-6 space-y-4 font-medium">
+    <a href="#sobre" class="hover:text-[#8B5CF6]">Quem sou eu?</a>
+    <a href="#servicos" class="hover:text-[#60A5FA]">Serviços</a>
+    <a href="#tecnologias" class="hover:text-[#8B5CF6]">Tecnologias</a>
+    <a href="#contato" class="hover:text-[#60A5FA]">Fale comigo</a>
+  </nav>
+</header>
+
+<main class="pt-24">
+
+<!-- HERO -->
+<section class="hero-gradient relative overflow-hidden pt-28 pb-28">
+  <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h1 class="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg leading-tight">
+      Crio soluções digitais que conectam pessoas e impulsionam negócios.
+    </h1>
+
+    <p id="frase-dinamica" class="mt-6 text-lg text-[#E6EEF8]/90 min-h-[48px]"></p>
+
+    <div class="mt-8 flex justify-center">
+      <a href="#contato"
+         class="bg-gradient-to-r from-[#60A5FA] to-[#8B5CF6] px-8 py-3 rounded-full text-white shadow hover:brightness-105 transition">
+        Vamos criar seu site!
       </a>
-
-      <nav class="hidden md:flex gap-6 items-center text-[#9FB0C8]">
-        <a href="#sobre" class="hover:text-white transition">Quem sou eu?</a>
-        <a href="#servicos" class="hover:text-white transition">Serviços</a>
-        <a href="#tecnologias" class="hover:text-white transition">Tecnologias</a>
-        <a href="#contato" class="hover:text-white transition">Fale comigo</a>
-      </nav>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main class="pt-24">
+<!-- QUEM SOU EU -->
+<section id="sobre" class="bg-[#1E293B] py-20">
+  <div class="max-w-4xl mx-auto px-8 text-center">
 
-    <!-- HERO -->
-    <section class="hero-gradient relative overflow-hidden pt-28 pb-28">
-      <div id="particles-js" class="absolute inset-0 -z-10"></div>
+    <h3 class="text-3xl font-semibold text-white mb-8">Quem Sou Eu?</h3>
 
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h1 class="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg leading-tight">
-          Crio soluções digitais que conectam pessoas e impulsionam negócios.<br />
-        </h1>
-
-        <p id="frase-dinamica" class="mt-6 text-lg text-[#E6EEF8]/90 min-h-[48px]"></p>
-
-        <div class="mt-8 flex justify-center gap-4">
-          <a href="#contato" class="inline-flex items-center bg-[#0F172A] hover:bg-[#111827] border border-[#0F172A]/30 px-8 py-3 rounded-full text-white shadow-md transition transform hover:-translate-y-1">
-            Vamos criar seu site!
-          </a>
-      </div>
-    </section>
-
-    <!-- Quem sou eu (terminal) -->
-    <section id="sobre" class="bg-[#1E293B] py-20">
-  <div class="container mx-auto px-8 text-center max-w-4xl">
-    <h3 class="text-3xl font-semibold mb-8 text-white">Quem Sou Eu?</h3>
-    <p class="text-[#94A3B8] mb-8 text-lg leading-relaxed">
-      Desenvolvedora Fullstack apaixonada por tecnologia, por resolver problemas reais e por transformar ideias em soluções digitais.
+    <p class="text-[#94A3B8] text-lg leading-relaxed mb-8">
+      Desenvolvedora Fullstack apaixonada por transformar ideias em soluções digitais.
     </p>
 
     <div class="bg-[#0B0F1A] rounded-xl p-6 text-left shadow-lg border border-[#1E293B]">
@@ -75,133 +103,194 @@
         <span class="ml-2 font-mono">keilla.js</span>
       </div>
 
-      <pre class="text-green-400 font-mono text-sm md:text-base leading-relaxed">
+<pre class="text-green-400 font-mono text-sm md:text-base leading-relaxed">
 const keilla = {
-       nome: "Keilla Arruda",
-       area: "Desenvolvimento Fullstack",
-      tecnologias: ["Java", "SpringBoot", "JavaScript", "PHP", "PostgreSQL"],
-       paixao: "Transformar ideias em experiências digitais com propósito",
-       cafeOuCha: "Chá de limão 🍵",
-        };
+   nome: "Keilla Arruda",
+   area: "Desenvolvimento Fullstack",
+   tecnologias: ["Java", "SpringBoot", "JavaScript", "PHP", "PostgreSQL"],
+   paixao: "Transformar ideias em experiências digitais com propósito",
+   cafeOuCha: "Chá de limão 🍵",
+};
 
-console.log("Olá! Sou a Keilla e estou pronta pra codar seu sucesso ");
-      </pre>
+console.log("Olá! Sou a Keilla e estou pronta pra codar seu sucesso!");
+</pre>
+
     </div>
 
     <p class="text-[#E2E8F0] mt-8 text-lg">
-      Ah, e sim chá de limão e código limpo são a combinação perfeita pra criar projetos incríveis.
+      Chá de limão + código limpo = projetos incríveis 🍵✨
     </p>
   </div>
 </section>
 
+<!-- SERVIÇOS / CHAMADA PARA O PORTFÓLIO -->
+<section id="servicos" class="py-24 bg-[#071025]">
+  <div class="max-w-6xl mx-auto px-6 text-center">
 
-    <!-- Serviços -->
-    <section id="servicos" class="py-20 bg-[#071025]">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-2xl md:text-3xl font-semibold text-center text-white mb-10">Serviços Oferecidos</h3>
+    <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">
+      Meu Portfólio de Projetos
+    </h3>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Card 1 -->
-          <article class="service-card p-6 rounded-xl bg-[#0F172A] hover:shadow-lg transition transform">
-            <div class="flex justify-center mb-4">
-              <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_tno6cg2w.json" background="transparent" speed="1" style="width:120px;height:120px" loop autoplay></lottie-player>
-            </div>
-            <h4 class="text-white font-semibold mb-2">Site Institucional</h4>
-            <p class="text-[#9FB0C8] mb-4">Presença digital profissional e moderna para a sua empresa.</p>
-            <a href="institucional.html" class="text-[#60A5FA] text-sm hover:underline">Ver exemplo</a>
-          </article>
+    <p class="text-[#9FB0C8] max-w-3xl mx-auto mb-12 text-lg">
+      Explore tudo o que já construí: Landing Pages, Sites Institucionais e Sistemas Web Funcionais.
+      Projetos criados com foco em performance, conversão e experiência digital.
+    </p>
 
-          <!-- Card 2 -->
-          <article class="service-card p-6 rounded-xl bg-[#0F172A] hover:shadow-lg transition transform">
-            <div class="flex justify-center mb-4">
-              <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_myejiggj.json" background="transparent" speed="1" style="width:120px;height:120px" loop autoplay></lottie-player>
-            </div>
-            <h4 class="text-white font-semibold mb-2">Landing Pages</h4>
-            <p class="text-[#9FB0C8] mb-4">Páginas estratégicas focadas em conversão e design impactante.</p>
-            <a href="https://github.com/keillaarr/cardapio" target="_blank" class="text-[#60A5FA] text-sm hover:underline">Ver exemplo</a>
-          </article>
+    <!-- CARD DESTAQUE -->
+    <a href="meus-projetos.html"
+       class="block bg-gradient-to-r from-[#60A5FA]/20 via-[#8B5CF6]/20 to-[#60A5FA]/20 
+              border border-[#8B5CF6]/30 p-10 rounded-3xl shadow-lg hover:shadow-purple-500/20
+              hover:-translate-y-2 transform transition duration-300">
 
-          <!-- Card 3 -->
-          <article class="service-card p-6 rounded-xl bg-[#0F172A] hover:shadow-lg transition transform">
-            <div class="flex justify-center mb-4">
-              <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_3vbOcw.json" background="transparent" speed="1" style="width:120px;height:120px" loop autoplay></lottie-player>
-            </div>
-            <h4 class="text-white font-semibold mb-2">Sistema Web Funcional</h4>
-            <p class="text-[#9FB0C8] mb-4">Plataformas interativas e escaláveis para operações reais.</p>
-            <a href="webfuncional.html" class="text-[#60A5FA] text-sm hover:underline">Ver exemplo</a>
-          </article>
-        </div>
+      <div class="flex flex-col items-center">
+
+        <lottie-player
+          src="https://assets2.lottiefiles.com/packages/lf20_myejiggj.json"
+          background="transparent"
+          speed="1"
+          style="width:180px;height:180px"
+          loop autoplay
+        ></lottie-player>
+
+        <h4 class="text-2xl md:text-3xl font-semibold text-white mt-4 mb-2">
+          Ver Todos os Projetos →
+        </h4>
+
+        <p class="text-[#A5B4CF] text-lg max-w-xl">
+          Conheça os resultados que entrego na prática e veja como posso transformar seu projeto em realidade.
+        </p>
+
       </div>
-    </section>
+    </a>
 
-    <!-- Tecnologias -->
-      <section id="tecnologias" class="bg-[#0F172A] py-20">
-        <div class="max-w-5xl mx-auto text-center px-6">
-          <h2 class="text-3xl font-bold text-white mb-12">Tecnologias & Ferramentas</h2>
-          
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center">
-            
-            <div class="bg-[#1E293B] p-6 rounded-xl shadow-lg hover:shadow-purple-500/30 hover:-translate-y-2 transition transform duration-300 w-36">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-10 mx-auto mb-3" />
-              <p class="text-sm text-[#7DD3FC] font-medium">React</p>
-            </div>
+  </div>
+</section>
 
-            <div class="bg-[#1E293B] p-6 rounded-xl shadow-lg hover:shadow-purple-500/30 hover:-translate-y-2 transition transform duration-300 w-36">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-10 mx-auto mb-3" />
-              <p class="text-sm text-[#7DD3FC] font-medium">Java / Spring</p>
-            </div>
 
-            <div class="bg-[#1E293B] p-6 rounded-xl shadow-lg hover:shadow-purple-500/30 hover:-translate-y-2 transition transform duration-300 w-36">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="w-10 mx-auto mb-3" />
-              <p class="text-sm text-[#A78BFA] font-medium">PHP</p>
-            </div>
+<!-- TECNOLOGIAS -->
+<section id="tecnologias" class="bg-[#0F172A] py-20">
+  <div class="max-w-5xl mx-auto text-center px-6">
+    <h2 class="text-3xl font-bold text-white mb-12">Tecnologias & Ferramentas</h2>
 
-            <div class="bg-[#1E293B] p-6 rounded-xl shadow-lg hover:shadow-purple-500/30 hover:-translate-y-2 transition transform duration-300 w-36">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-10 mx-auto mb-3" />
-              <p class="text-sm text-[#7DD3FC] font-medium">Node.js</p>
-            </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center">
 
-            <div class="bg-[#1E293B] p-6 rounded-xl shadow-lg hover:shadow-purple-500/30 hover:-translate-y-2 transition transform duration-300 w-36">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="w-10 mx-auto mb-3" />
-              <p class="text-sm text-[#7DD3FC] font-medium">Postgres / SQL</p>
-            </div>
-
-          </div>
-        </div>
-    </section>
-
-        <!-- Contato -->
-    <section id="contato" class="py-16 bg-[#0B1220]">
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4">Fale Comigo</h3>
-        <p class="text-[#9FB0C8] mb-6">Entre em contato pelo WhatsApp ou envie uma mensagem pelo formulário abaixo.</p>
-
-        <div class="flex justify-center mb-6">
-          <a href="https://zapbio.link/ozvo8c" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-full transition shadow">Falar no WhatsApp</a>
-        </div>
-
-        <div id="mensagem-sucesso" class="hidden mx-auto max-w-xl bg-emerald-100 border border-emerald-300 text-emerald-800 p-4 rounded mb-4 transition-opacity">
-          <strong class="font-semibold">Mensagem enviada!</strong> Obrigada — eu entro em contato em breve.
-        </div>
-
-        <form id="form-contato" class="space-y-4">
-          <input type="text" name="nome" placeholder="Seu nome" required class="w-full p-3 rounded bg-[#071025] border border-[#213041] outline-none" />
-          <input type="email" name="email" placeholder="Seu e-mail" required class="w-full p-3 rounded bg-[#071025] border border-[#213041] outline-none" />
-          <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required class="w-full p-3 rounded bg-[#071025] border border-[#213041] outline-none"></textarea>
-          <div class="flex justify-center">
-            <button type="submit" class="bg-gradient-to-r from-[#60A5FA] to-[#8B5CF6] px-8 py-3 rounded-full text-white shadow hover:brightness-105 transition">Enviar</button>
-          </div>
-        </form>
+      <div class="bg-[#1E293B] p-6 rounded-xl hover:-translate-y-2 hover:shadow-purple-500/30 transition w-36">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-10 mx-auto mb-3">
+        <p class="text-sm text-[#7DD3FC] font-medium">React</p>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#071025] text-center py-6 mt-8">
-      <p class="text-sm text-[#98A8C4]">© 2025 Keilla Arruda. Todos os direitos reservados.</p>
-    </footer>
-  </main>
+      <div class="bg-[#1E293B] p-6 rounded-xl hover:-translate-y-2 hover:shadow-purple-500/30 transition w-36">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-10 mx-auto mb-3">
+        <p class="text-sm text-[#7DD3FC] font-medium">Java / Spring</p>
+      </div>
 
-  <!-- Script -->
-  <script src="script.js" defer></script>
+      <div class="bg-[#1E293B] p-6 rounded-xl hover:-translate-y-2 hover:shadow-purple-500/30 transition w-36">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-10 mx-auto mb-3">
+        <p class="text-sm text-[#A78BFA] font-medium">PHP</p>
+      </div>
+
+      <div class="bg-[#1E293B] p-6 rounded-xl hover:-translate-y-2 hover:shadow-purple-500/30 transition w-36">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-10 mx-auto mb-3">
+        <p class="text-sm text-[#7DD3FC] font-medium">Node.js</p>
+      </div>
+
+      <div class="bg-[#1E293B] p-6 rounded-xl hover:-translate-y-2 hover:shadow-purple-500/30 transition w-36">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="w-10 mx-auto mb-3">
+        <p class="text-sm text-[#7DD3FC] font-medium">Postgres / SQL</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="py-16 bg-[#0B1220]">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+
+    <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4">Fale Comigo</h3>
+    <p class="text-[#9FB0C8] mb-6">Entre em contato pelo WhatsApp ou envie uma mensagem pelo formulário abaixo.</p>
+
+    <div class="flex justify-center mb-6">
+      <a href="https://wa.me/5521980324930?text=Olá,%20gostaria%20de%20mais%20informações"
+         target="_blank"
+         class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-full shadow transition">
+        Falar no WhatsApp
+      </a>
+    </div>
+
+    <div id="mensagem-sucesso"
+         class="hidden bg-emerald-100 border border-emerald-300 text-emerald-800 p-4 rounded mb-4">
+      Mensagem enviada! Obrigada — entrarei em contato em breve.
+    </div>
+
+    <form id="form-contato"
+          action="https://formsubmit.co/keillaarruda9@gmail.com"
+          method="POST"
+          class="space-y-4">
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="">
+
+      <input type="text" name="name" placeholder="Seu nome" required
+             class="w-full p-3 rounded bg-[#071025] border border-[#213041] outline-none">
+
+      <input type="email" name="email" placeholder="Seu e-mail" required
+             class="w-full p-3 rounded bg-[#071025] border border-[#213041] outline-none">
+
+      <textarea name="message" rows="5" placeholder="Sua mensagem" required
+                class="w-full p-3 rounded bg-[#071025] border border-[#213041] outline-none"></textarea>
+
+      <button type="submit"
+              class="bg-gradient-to-r from-[#60A5FA] to-[#8B5CF6] px-8 py-3 rounded-full text-white shadow hover:brightness-105 transition">
+        Enviar
+      </button>
+    </form>
+
+    <div id="msg-sucesso"
+         class="hidden bg-emerald-500/20 border border-emerald-500 text-emerald-200 p-4 rounded mt-4">
+      Mensagem enviada com sucesso! Obrigada 💜
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#071025] text-center py-6 mt-8">
+  <p class="text-sm text-[#98A8C4]">© 2025 Keilla Arruda. Todos os direitos reservados.</p>
+</footer>
+
+</main>
+
+<!-- Scripts -->
+<script>
+window.addEventListener("scroll", () => {
+  document.getElementById("header").classList.toggle("scrolled", window.scrollY > 10);
+});
+</script>
+
+<script>
+document.getElementById("menu-toggle").onclick = () => {
+  document.getElementById("mobile-menu").classList.toggle("hidden");
+};
+</script>
+
+<script>
+document.getElementById("form-contato").addEventListener("submit", function(e){
+  e.preventDefault();
+  const form = this;
+
+  fetch(form.action, { method: "POST", body: new FormData(form)})
+    .then(() => {
+      form.reset();
+      const msg = document.getElementById("msg-sucesso");
+      msg.classList.remove("hidden");
+      setTimeout(() => msg.classList.add("hidden"), 5000);
+    });
+});
+</script>
+
+<script src="script.js" defer></script>
+
 </body>
 </html>

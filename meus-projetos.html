@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meus Projetos | Keilla Arruda</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Estilos gerais -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Ícone -->
+  <link rel="shortcut icon" href="assets/meulogo.png" type="image/png" />
+</head>
+
+<body class="bg-[#0F172A] text-[#E6EEF8] antialiased font-inter">
+
+<!-- Scroll progress -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-[#60A5FA] w-0 z-50"></div>
+
+<!-- HEADER -->
+<header
+  id="header"
+  class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#0F172A]/50 
+         border-b border-[#8B5CF6]/30 transition-all duration-500"
+>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/meulogo.png" alt="Logo"
+           class="h-12 w-12 md:h-14 md:w-14 rounded-full shadow-lg hover:scale-105 transition" />
+      <span class="text-lg md:text-xl font-semibold text-white">
+        Keilla Arruda <span class="text-[#60A5FA]">• Desenvolvedora</span>
+      </span>
+    </a>
+
+    <!-- Menu -->
+    <nav class="hidden md:flex items-center space-x-8 text-[#E2E8F0] font-medium">
+      <a href="index.html#sobre" class="hover:text-[#8B5CF6]">Quem sou eu?</a>
+      <a href="index.html#servicos" class="hover:text-[#60A5FA]">Serviços</a>
+      <a href="index.html#tecnologias" class="hover:text-[#8B5CF6]">Tecnologias</a>
+      <a href="index.html#contato" class="hover:text-[#60A5FA]">Contato</a>
+    </nav>
+
+    <!-- Mobile -->
+    <button id="menu-toggle" class="md:hidden flex flex-col justify-center space-y-1.5">
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+    </button>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <nav id="mobile-menu"
+       class="hidden flex-col md:hidden bg-[#0B1220]/95 border-t border-[#8B5CF6]/30 
+              text-center space-y-4 py-6 text-[#E2E8F0] font-medium">
+    <a href="index.html#sobre" class="hover:text-[#8B5CF6]">Quem sou eu?</a>
+    <a href="index.html#servicos" class="hover:text-[#60A5FA]">Serviços</a>
+    <a href="index.html#tecnologias" class="hover:text-[#8B5CF6]">Tecnologias</a>
+    <a href="index.html#contato" class="hover:text-[#60A5FA]">Contato</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-gradient pt-32 pb-20 text-center">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow">
+    Meus <span class="text-[#60A5FA]">Projetos</span>
+  </h1>
+  <p class="mt-4 text-lg max-w-2xl mx-auto text-[#E6EEF8]/90">
+    Uma seleção dos trabalhos que desenvolvi — incluindo Landing Pages, Sites Institucionais e Sistemas Web completos.
+  </p>
+</section>
+
+<!-- CONTEÚDO -->
+<main class="max-w-6xl mx-auto px-6 py-16">
+
+  <!-- ================================ -->
+  <!-- LANDING PAGES -->
+  <!-- ================================ -->
+
+  <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Landing Pages</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+
+    <!-- Cardápio Digital -->
+    <article class="project-card">
+      <img src="assets/cardapio.jpg" alt="Cardápio Digital" class="project-thumb" />
+      <h3 class="project-title">Cardápio Digital</h3>
+      <p class="project-desc">Landing Page moderna para restaurantes exibirem menu e categorias.</p>
+      <ul class="project-list">
+        <li>• Layout responsivo</li>
+        <li>• Categorias separadas</li>
+        <li>• Cards de produtos</li>
+      </ul>
+      <a href="https://keillaarr.github.io/cardapio/" target="_blank" class="project-link">
+        🔗 Acessar projeto
+      </a>
+    </article>
+
+  </div>
+
+  <!-- ================================ -->
+  <!-- SITES INSTITUCIONAIS -->
+  <!-- ================================ -->
+
+  <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sites Institucionais</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+
+    <!-- AJF Supervisão -->
+    <article class="project-card">
+      <img src="assets/ajf.jpg" alt="AJF Supervisão" class="project-thumb" />
+      <h3 class="project-title">AJF Supervisão</h3>
+      <p class="project-desc">Site institucional direto, moderno e informativo.</p>
+      <ul class="project-list">
+        <li>• Layout limpo</li>
+        <li>• Sessões intuitivas</li>
+      </ul>
+      <a href="https://keillaarr.github.io/ajf-supervisao/" target="_blank" class="project-link">
+        🔗 Acessar projeto
+      </a>
+    </article>
+
+    <!-- RP Gestão -->
+    <article class="project-card">
+      <img src="assets/rp.jpg" alt="RP Gestão" class="project-thumb" />
+      <h3 class="project-title">RP Gestão e Assessoria</h3>
+      <p class="project-desc">Site profissional e organizado para empresa de gestão condominial.</p>
+      <ul class="project-list">
+        <li>• Seções completas</li>
+        <li>• Contato rápido</li>
+      </ul>
+      <a href="https://keillaarr.github.io/rp-gestaoeassessoria/" target="_blank" class="project-link">
+        🔗 Acessar projeto
+      </a>
+    </article>
+
+    <!-- Studio Beleza -->
+    <article class="project-card opacity-60 cursor-not-allowed">
+      <img src="assets/beleza.jpg" alt="Studio Beleza Viva" class="project-thumb" />
+      <h3 class="project-title">Studio Beleza Viva</h3>
+      <p class="project-desc">Site elegante com catálogo de serviços.</p>
+      <span class="text-[#A78BFA] italic text-sm">🔒 Projeto privado</span>
+    </article>
+
+  </div>
+
+  <!-- ================================ -->
+  <!-- SISTEMAS FUNCIONAIS -->
+  <!-- ================================ -->
+
+  <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sistemas Web Funcionais</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- CursoClub -->
+    <article class="project-card">
+      <img src="assets/cursoclub.jpg" alt="CursoClub" class="project-thumb" />
+      <h3 class="project-title">CursoClub</h3>
+      <p class="project-desc">Plataforma de cursos com carrossel e seção de descontos.</p>
+      <ul class="project-list">
+        <li>• Carrossel dinâmico</li>
+        <li>• Seção de destaque para vendas</li>
+      </ul>
+      <a href="https://keillaarr.github.io/cursoclub/" target="_blank" class="project-link">
+        🔗 Acessar projeto
+      </a>
+    </article>
+
+  </div>
+
+</main>
+
+<!-- CTA FINAL -->
+<section class="text-center py-20 bg-[#0B1220]">
+  <h3 class="text-3xl font-semibold text-white mb-4">Gostou dos meus projetos?</h3>
+  <p class="text-[#9FB0C8] max-w-xl mx-auto mb-6">
+    Vamos criar uma página ou sistema sob medida para elevar sua presença digital.
+  </p>
+  <a href="https://wa.me/5521980324930?text=Olá%2C%20quero%20um%20projeto!"
+     target="_blank"
+     class="bg-gradient-to-r from-[#60A5FA] to-[#8B5CF6] px-8 py-3 rounded-full text-white shadow hover:brightness-105 transition">
+     Falar no WhatsApp
+  </a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#071025] text-center py-6">
+  <p class="text-sm text-[#98A8C4]">© 2025 Keilla Arruda. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Script menu -->
+<script>
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.getElementById("mobile-menu").classList.toggle("hidden")
+})
+</script>
+
+<!-- Scroll progress -->
+<script>
+const progress = document.getElementById("scroll-progress")
+window.addEventListener("scroll", () => {
+  const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100
+  progress.style.width = scrolled + "%"
+})
+</script>
+
+<!-- CSS extra para os cards (pode colar no styles.css) -->
+<style>
+  .project-card {
+    background: #0F172A;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: .3s;
+    box-shadow: 0 0 0 transparent;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.15);
+  }
+  .project-thumb {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: .75rem;
+    margin-bottom: 1rem;
+  }
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: .5rem;
+  }
+  .project-desc {
+    color: #9FB0C8;
+    margin-bottom: .75rem;
+  }
+  .project-list {
+    color: #7DD3FC;
+    font-size: .875rem;
+    margin-bottom: 1rem;
+  }
+  .project-link {
+    color: #60A5FA;
+    font-size: .9rem;
+  }
+</style>
+
+</body>
+</html>

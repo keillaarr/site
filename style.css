@@ -2,28 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Basic font */
+/* ===== FONT & ROOT COLORS ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-:root { --accent-1: #60A5FA; --accent-2: #8B5CF6; }
 
-html,body { height:100%; font-family: 'Inter', sans-serif; }
+:root {
+  --accent-1: #60A5FA; /* Azul principal */
+  --accent-2: #8B5CF6; /* Roxo principal */
+}
 
-/* HERO animated gradient (subtle & performant) */
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #0F172A;
+  color: #F1F5F9;
+}
+
+/* ===== HERO SECTION (ANIMATED GRADIENT) ===== */
 .hero-gradient {
   background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
   background-size: 300% 300%;
   animation: gradientMove 12s ease infinite;
 }
+
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Particles container should fill hero */
-#particles-js { opacity: 0.08; }
+/* ===== PARTICLES BACKGROUND ===== */
+#particles-js {
+  opacity: 0.08;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 
-/* Terminal / código box */
+/* ===== TERMINAL / "CÓDIGO" BOX ===== */
 .codigo-box {
   background: #000;
   color: #4ade80;
@@ -31,26 +49,107 @@ html,body { height:100%; font-family: 'Inter', sans-serif; }
   padding: 18px;
   min-height: 220px;
   max-height: 420px;
-  overflow:auto;
-  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
 }
 
-/* Cursor */
-#cursor { display:inline-block; width:8px; height:1em; background:#4ade80; margin-left:6px; vertical-align:bottom; animation: blink 1s steps(2) infinite; }
-@keyframes blink { 50% { background-color: transparent; } }
-
-/* Service cards & hover */
-.service-card { border-radius: 12px; transition: transform 300ms ease, box-shadow 300ms ease; }
-.service-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 18px 40px rgba(99,102,241,0.12), 0 6px 18px rgba(0,0,0,0.6); }
-
-/* Tech badges */
-.tech-badge { width:96px; height:96px; display:flex; align-items:center; justify-content:center; flex-direction:column; transition: transform .25s, box-shadow .25s; }
-.tech-badge:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(139,92,246,0.12); }
-
-/* Scroll progress */
-#scroll-progress { transition: width 120ms linear; }
-
-/* Responsive fine tuning */
-@media (min-width: 768px){
-  .codigo-box { padding: 28px; }
+@media (min-width: 768px) {
+  .codigo-box {
+    padding: 28px;
+  }
 }
+
+/* ===== CURSOR ANIMADO ===== */
+#cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: #4ade80;
+  margin-left: 6px;
+  vertical-align: bottom;
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+  50% { background-color: transparent; }
+}
+
+/* ===== SERVICE CARDS ===== */
+.service-card {
+  border-radius: 12px;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow:
+    0 18px 40px rgba(99, 102, 241, 0.12),
+    0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== TECH BADGES ===== */
+.tech-badge {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tech-badge:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+#scroll-progress {
+  transition: width 120ms linear;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--accent-1);
+  width: 0%;
+  z-index: 9999;
+}
+
+/* ===== HEADER MINIMALISTA TRANSLÚCIDO ===== */
+header {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+  transition: all 0.4s ease;
+}
+
+header.scrolled {
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== MENU MOBILE ANIMAÇÃO ===== */
+#mobile-menu {
+  transition: all 0.4s ease;
+}
+#mobile-menu.show {
+  display: flex !important;
+  animation: fadeDown 0.4s ease forwards;
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== ÍCONE HAMBURGUER ANIMADO ===== */
+#menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+#menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+

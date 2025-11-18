@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projetos Institucionais | Keilla Arruda</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Ícone -->
+  <link rel="shortcut icon" href="assets/meulogo.png" type="image/png" />
+</head>
+
+<body class="bg-[#0F172A] text-[#E6EEF8] antialiased font-inter">
+
+<!-- Scroll progress -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-[#60A5FA] w-0 z-50"></div>
+
+<!-- HEADER (igual ao index) -->
+<header
+  id="header"
+  class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#0F172A]/50 border-b border-[#8B5CF6]/30 transition-all duration-500"
+>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <!-- Logo + nome -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img
+        src="assets/meulogo.png"
+        alt="Logo Keilla Arruda"
+        class="h-12 w-12 md:h-14 md:w-14 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+      />
+      <span class="text-lg md:text-xl font-semibold text-white">
+        Keilla Arruda <span class="text-[#60A5FA]">• Desenvolvedora</span>
+      </span>
+    </a>
+
+    <!-- Menu desktop -->
+    <nav class="hidden md:flex items-center space-x-8 text-[#E2E8F0] font-medium">
+      <a href="index.html#sobre" class="hover:text-[#8B5CF6] transition">Quem sou eu?</a>
+      <a href="index.html#servicos" class="hover:text-[#60A5FA] transition">Serviços</a>
+      <a href="index.html#tecnologias" class="hover:text-[#8B5CF6] transition">Tecnologias</a>
+      <a href="index.html#contato" class="hover:text-[#60A5FA] transition">Contato</a>
+    </nav>
+
+    <!-- Botão mobile -->
+    <button
+      id="menu-toggle"
+      class="md:hidden flex flex-col justify-center space-y-1.5 focus:outline-none"
+      aria-label="Abrir menu"
+    >
+      <span class="w-6 h-0.5 bg-white rounded transition-all"></span>
+      <span class="w-6 h-0.5 bg-white rounded transition-all"></span>
+      <span class="w-6 h-0.5 bg-white rounded transition-all"></span>
+    </button>
+  </div>
+
+  <!-- Menu Mobile -->
+  <nav
+    id="mobile-menu"
+    class="hidden flex-col md:hidden bg-[#0B1220]/95 border-t border-[#8B5CF6]/30 text-center 
+           space-y-4 py-6 text-[#E2E8F0] font-medium transition-all duration-500"
+  >
+    <a href="index.html#sobre" class="block hover:text-[#8B5CF6] transition">Quem sou eu?</a>
+    <a href="index.html#servicos" class="block hover:text-[#60A5FA] transition">Serviços</a>
+    <a href="index.html#tecnologias" class="block hover:text-[#8B5CF6] transition">Tecnologias</a>
+    <a href="index.html#contato" class="block hover:text-[#60A5FA] transition">Contato</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-gradient pt-32 pb-20 text-center">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow">
+    Projetos <span class="text-[#60A5FA]">Institucionais</span>
+  </h1>
+  <p class="mt-4 text-lg max-w-2xl mx-auto text-[#E6EEF8]/90">
+    Um compilado dos projetos criados para empresas e profissionais que buscavam presença digital com impacto e propósito.
+  </p>
+</section>
+
+<!-- CONTEÚDO -->
+<main class="max-w-6xl mx-auto px-6 py-16">
+
+  <!-- Título -->
+  <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-10">
+    Meus Projetos
+  </h2>
+
+  <!-- GRID -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- PROJETO 1 -->
+    <article class="bg-[#0F172A] border border-[#8B5CF6]/20 rounded-xl p-6 shadow 
+                    hover:shadow-purple-600/20 hover:-translate-y-2 transition duration-300 transform">
+      <h3 class="text-xl font-semibold text-white mb-2">CursoClub</h3>
+      <p class="text-[#9FB0C8] mb-3">Plataforma fictícia de cursos com destaque para vendas e UX.</p>
+      <ul class="text-[#7DD3FC] text-sm space-y-1 mb-4">
+        <li>• Carrossel dinâmico de cursos</li>
+        <li>• Seção de descontos</li>
+        <li>• Totalmente responsivo</li>
+      </ul>
+      <a href="https://keillaarr.github.io/cursoclub" target="_blank" class="text-[#60A5FA] hover:underline">
+         Acessar projeto
+      </a>
+    </article>
+
+    <!-- PROJETO 2 -->
+    <article class="bg-[#0F172A] border border-[#8B5CF6]/20 rounded-xl p-6 shadow 
+                    hover:shadow-purple-600/20 hover:-translate-y-2 transition duration-300 transform">
+      <h3 class="text-xl font-semibold text-white mb-2">RP Gestão e Assessoria</h3>
+      <p class="text-[#9FB0C8] mb-3">Site institucional moderno para empresa de gestão condominial.</p>
+      <ul class="text-[#7DD3FC] text-sm space-y-1 mb-4">
+        <li>• Seções organizadas e otimizadas</li>
+        <li>• Layout totalmente profissional</li>
+        <li>• Contato rápido integrado</li>
+      </ul>
+      <a href="https://keillaarr.github.io/rp-gestaoeassessoria" target="_blank" class="text-[#60A5FA] hover:underline">
+         Acessar projeto
+      </a>
+    </article>
+
+   <!-- PROJETO 3 -->
+<article class="bg-[#0F172A] border border-[#8B5CF6]/20 rounded-xl p-6 shadow 
+                hover:shadow-purple-600/20 hover:-translate-y-2 transition duration-300 transform">
+  <h3 class="text-xl font-semibold text-white mb-2">AJF Supervisão</h3>
+  <p class="text-[#9FB0C8] mb-3">
+    Site institucional desenvolvido para apresentar serviços de supervisão condominial.
+  </p>
+
+  <ul class="text-[#7DD3FC] text-sm space-y-1 mb-4">
+    <li>• Página institucional completa</li>
+    <li>• Seções de serviços e contato</li>
+    <li>• Design moderno e profissional</li>
+  </ul>
+
+  <a href="https://keillaarr.github.io/ajf-supervisao/" 
+     target="_blank" 
+     class="text-[#60A5FA] hover:underline">
+      Acessar projeto
+  </a>
+</article>
+
+
+  </div>
+</main>
+
+<!-- CTA FINAL -->
+<section class="text-center py-20 bg-[#0B1220]">
+  <h3 class="text-3xl font-semibold text-white mb-4">Gostou do meu trabalho?</h3>
+  <p class="text-[#9FB0C8] max-w-xl mx-auto mb-6">
+    Vamos criar algo único para você seja um site institucional ou um sistema completo.
+  </p>
+  <a href="https://wa.me/5521980324930?text=Olá%2C%20gostei%20dos%20seus%20projetos!"
+     target="_blank"
+     class="bg-gradient-to-r from-[#60A5FA] to-[#8B5CF6] px-8 py-3 rounded-full 
+            text-white shadow hover:brightness-105 transition">
+     Falar no WhatsApp
+  </a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#071025] text-center py-6">
+  <p class="text-sm text-[#98A8C4]">© 2025 Keilla Arruda. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Script do menu -->
+<script>
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  const menu = document.getElementById("mobile-menu");
+  menu.classList.toggle("hidden");
+});
+</script>
+
+<!-- Script opcional do scroll progress -->
+<script>
+const progress = document.getElementById("scroll-progress");
+window.addEventListener("scroll", () => {
+  const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  progress.style.width = scrolled + "%";
+});
+</script>
+
+</body>
+</html>

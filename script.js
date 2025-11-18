@@ -140,4 +140,36 @@ window.addEventListener("DOMContentLoaded", () => {
     obs.observe(el);
   });
 
+
+
+
+  // Efeito do header ao rolar
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("header");
+    if (window.scrollY > 10) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  // Toggle do menu mobile
+  const toggleBtn = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  toggleBtn.addEventListener("click", () => {
+    toggleBtn.classList.toggle("open");
+    mobileMenu.classList.toggle("show");
+  });
+
+  // Fecha menu ao clicar em um link
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      toggleBtn.classList.remove("open");
+      mobileMenu.classList.remove("show");
+    });
+  });
+
+
+
 });
